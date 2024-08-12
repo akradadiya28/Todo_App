@@ -1,0 +1,26 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akradadiya28/Todo_App.git"
+  },
+  "author": "Arpit Radadiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akradadiya28/Todo_App/issues"
+  },
+  "homepage": "https://github.com/akradadiya28/Todo_App#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
