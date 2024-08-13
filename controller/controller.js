@@ -1,7 +1,7 @@
 let todoStorage = [];
 
 const defaultController = (req, res) => {
-    res.render('index.ejs');
+    res.render('index.ejs', { todos: todoStorage });
 }
 const todoApp = (req, res) => {
 
