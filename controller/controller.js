@@ -37,11 +37,26 @@ const updateTodo = (req, res) => {
     const updateData = todoStorage.find((todo) => {
         return todo.id = id;
     })
+
     updateData.task = req.body.task;
+
     console.log("Update Data", updateData);
 
     res.redirect('/');
 }
 
+const deleteTodo = (req, res) => {
 
-module.exports = { defaultController, todoApp, editTodo, updateTodo };
+    let { id } = req.params;
+
+    let newTodo = todoStorage.filter((todo) => {
+        return todo.id != id;
+    })
+    console.log("newTodo", newTodo);
+
+    todoStorage = newTodo;
+
+    res.redirect('/');
+}
+
+module.exports = { defaultController, todoApp, editTodo, updateTodo, deleteTodo };
