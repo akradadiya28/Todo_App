@@ -4,5 +4,7 @@ const controller = require('../controller/controller.js');
 
 router.get('/', controller.defaultController);
 router.post('/todoApp', controller.todoApp);
+router.get('/editTodo/:id', controller.editTodo);
+router.post('/updateTodo/:id', controller.updateTodo);
 
 module.exports = router; 

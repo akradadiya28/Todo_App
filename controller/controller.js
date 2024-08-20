@@ -4,19 +4,44 @@ const defaultController = (req, res) => {
     res.render('index.ejs', { todos: todoStorage });
 }
 const todoApp = (req, res) => {
-
     // console.log(req.body);
-
     let todoObj = {
         id: todoStorage.length + 1,
         task: req.body.task
     }
     todoStorage = [...todoStorage, todoObj];
 
-    console.log(todoObj);
-
-    console.log("Todo");
+    // console.log(todoObj);
     res.redirect('/')
 }
 
-module.exports = { defaultController, todoApp };
+const editTodo = (req, res) => {
+
+    let { id } = req.params;
+
+    let singleRec = todoStorage.find((rec) => {
+        return rec.id == id;
+    })
+
+    // console.log("Single Record", singleRec);
+
+    // res.send("Hello");
+    res.render('editTodo.ejs', { todos: singleRec });
+}
+
+const updateTodo = (req, res) => {
+
+    let { id } = req.params;
+    console.log(req.body);
+
+    const updateData = todoStorage.find((todo) => {
+        return todo.id = id;
+    })
+    updateData.task = req.body.task;
+    console.log("Update Data", updateData);
+
+    res.redirect('/');
+}
+
+
+module.exports = { defaultController, todoApp, editTodo, updateTodo };
